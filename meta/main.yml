@@ -1,0 +1,54 @@
+---
+galaxy_info:
+  author: Chris Blumentritt
+  description:
+  license: license BSD
+  min_ansible_version: 1.2
+  platforms:
+  - name: EL
+    versions:
+    - all
+  - name: GenericUNIX
+    versions:
+    - all
+  - name: OpenBSD
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+  - name: opensuse
+    versions:
+    - all
+  - name: MacOSX
+    versions:
+    - all
+  - name: Solaris
+    versions:
+    - all
+  - name: Amazon
+    versions:
+    - all
+    - 2013.03
+    - 2013.09
+  - name: GenericBSD
+    versions:
+    - all
+  - name: FreeBSD
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+  - name: SLES
+    versions:
+    - all
+  - name: GenericLinux
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  categories:
+  - system
+dependencies: []

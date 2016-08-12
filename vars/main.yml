@@ -1,0 +1,7 @@
+---
+# vars file for ansible-deploy-dotfiles/
+homedir: "{{ ansible_env.HOME }}"
+vimbasedir: "{{ homedir}}/.vim"
+vimautoloaddir: "{{ homedir}}/.vim/autoload"
+vimbundledir: "{{ homedir}}/.vim/bundle"
+vimplugindir: "{{ homedir}}/.vim/plugin"

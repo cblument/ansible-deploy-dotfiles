@@ -1,0 +1,33 @@
+---
+# tasks for setting up vim
+
+- name: Create vim dirs
+  file: dest="{{ item }}"
+        state=directory
+  with_items:
+    - "{{ vimbasedir }}"
+    - "{{ vimautoloaddir }}"
+    - "{{ vimbundledir }}"
+    - "{{ vimplugindir }}"
+
+- name: Install pathogen
+  get_url: url=https://tpo.pe/pathogen.vim
+           dest="{{ vimautoloaddir }}/pathogen.vim"
+
+- name: Install vimrc
+  copy: src=vimrc dest="{{ homedir }}/.vimrc"
+
+# Some nasty filter chaining here for the destination to get repositories in
+# the with_items list to work with the destination.
+- name: Checkout vim plugins
+  git: repo={{ item }}
+       dest="{{ vimbundledir }}/{{ item.split("/")[-1].split(".")[0] }}"
+  with_items:
+    - https://github.com/scrooloose/nerdtree.git
+    - https://github.com/klen/python-mode.git
+    - https://github.com/rodjek/vim-puppet.git
+    - https://github.com/pearofducks/ansible-vim.git
+    - https://github.com/altercation/vim-colors-solarized.git
+    - https://github.com/fatih/vim-go.git
+    - https://github.com/elzr/vim-json.git
+    - https://github.com/tpope/vim-surround.git

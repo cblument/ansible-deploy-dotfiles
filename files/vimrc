@@ -1,0 +1,19 @@
+set nocp
+let g:pathogen_disabled = []
+call add(g:pathogen_disabled, 'vim-go')
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+map <F4> :NERDTreeToggle<CR>
+let NERDTreeWinPos="left"
+let NERDTreeWinSize=30
+set background=dark
+colorscheme solarized
+set expandtab
+set hlsearch
+set ruler
+"set tabstop=2
+"set shiftwidth=2
+let g:pymode_folding = 0
+let g:pymode_lint = 0
+let g:pymode_rope = 0

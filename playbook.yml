@@ -1,0 +1,11 @@
+# Deploy dotfiles
+# ansible-playbook -i <somehost>, deploy_dotfiles.yml
+# use option -u <user> to set a user to ssh as
+# use option -k to prompt for a password if you do not have a key copied over
+# if using passphrase use ssh-agent
+
+---
+- name: Deploy dotfiles
+  hosts: all
+  roles:
+     - ansible-deploy-dotfiles
