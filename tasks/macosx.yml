@@ -1,0 +1,10 @@
+---
+# tasks for mac os x based distributions
+
+- name: install handy utilities
+  homebrew: name={{ item }}
+            state=present
+  with_items:
+    - stoken
+    - jq
+    - ripgrep

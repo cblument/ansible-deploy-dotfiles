@@ -1,4 +1,6 @@
 set nocp
+set splitright
+set splitbelow
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-go')
 execute pathogen#infect()
@@ -8,7 +10,7 @@ map <F4> :NERDTreeToggle<CR>
 let NERDTreeWinPos="left"
 let NERDTreeWinSize=30
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 set expandtab
 set hlsearch
 set ruler

@@ -3,13 +3,11 @@
 
 - include: vim.yml
 
-- name: Place git bash completion file
-  copy: src=git-completion.bash dest="{{ homedir }}/.git-completion.bash"
-
-- name: Source bash completion
-  lineinfile: dest="{{ homedir }}/.bashrc"
-              state=present
-              line="source ~/.git-completion.bash"
-
 - name: Place tmux.conf
   copy: src=tmux.conf dest="{{ homedir }}/.tmux.conf"
+
+- include: debian.yml
+  when: ansible_distribution == "Debian"
+
+- include: macosx.yml
+  when: ansible_distribution == "MacOSX"

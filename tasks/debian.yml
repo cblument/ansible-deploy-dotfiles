@@ -1,0 +1,10 @@
+---
+# tasks for debian based distributions
+
+- name: Place git bash completion file
+  copy: src=git-completion.bash dest="{{ homedir }}/.git-completion.bash"
+
+- name: Source bash completion
+  lineinfile: dest="{{ homedir }}/.bashrc"
+              state=present
+              line="source ~/.git-completion.bash"
