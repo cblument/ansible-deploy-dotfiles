@@ -10,6 +10,3 @@
     - ripgrep
     - bash-completion
 
-- name: install powerline
-  pip: name=powerline-status
-       state=present
